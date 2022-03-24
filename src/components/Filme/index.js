@@ -11,11 +11,6 @@ function Filme() {
                     <h3>Quinta-Feira - 24/06/2021</h3>
                     <div className="horario">
                         <Link to="/sessao"><p>15:00</p></Link>
-                        <Link to="/sessao"><p>15:00</p></Link>
-                        <Link to="/sessao"><p>15:00</p></Link>
-                        <Link to="/sessao"><p>15:00</p></Link>
-                        <Link to="/sessao"><p>15:00</p></Link>
-                        <Link to="/sessao"><p>15:00</p></Link>
                     </div>
                 </div>
             </main>

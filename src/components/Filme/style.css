@@ -64,6 +64,11 @@
     margin-left: 10px;
 }
 
+.Filme footer .filme img {
+    width: 48px;
+    height: 72px;
+}
+
 .Filme footer p {
     font-size: 26px;
     font-weight: 400;
