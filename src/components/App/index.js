@@ -4,8 +4,9 @@ import "./reset.css";
 import "./style.css";
 
 import Header from "./../Header/";
-import Catalogo from "./../Catalogo";
+import Catalogo from "./../Catalogo/";
 import Filme from "./../Filme/";
+import Assento from "./../Assento/";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Catalogo />}/>
                 <Route path="/filme" element={<Filme />}/>
+                <Route path="/sessao" element={<Assento />}/>
             </Routes>
         </BrowserRouter>
     );
