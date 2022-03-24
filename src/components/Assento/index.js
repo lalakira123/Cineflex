@@ -34,7 +34,7 @@ function Assento() {
                         <input placeholder="Digite seu CPF..."/>
                     </div>
                 </div>
-                <Link to="/">
+                <Link to="/sucesso">
                     <button>Reservar assento(s)</button>
                 </Link>
             </main>

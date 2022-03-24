@@ -1,0 +1,47 @@
+.Sucesso main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.Sucesso main .sucesso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #247A6B;
+    margin-bottom: 30px;
+}
+
+.Sucesso main div {
+    width: 300px;
+    margin-bottom: 40px;
+}
+
+.Sucesso main div h3 {
+    color: #293845;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.Sucesso main div p {
+    color: #293845;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.Sucesso main button {
+    margin-top: 62px;
+    color: #FFFFFF;
+    width: 225px;
+    height: 42px;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #E8833A;
+    border: none;
+    border-radius: 3px;
+}

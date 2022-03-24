@@ -7,6 +7,7 @@ import Header from "./../Header/";
 import Catalogo from "./../Catalogo/";
 import Filme from "./../Filme/";
 import Assento from "./../Assento/";
+import Sucesso from "./../Sucesso/";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/" element={<Catalogo />}/>
                 <Route path="/filme" element={<Filme />}/>
                 <Route path="/sessao" element={<Assento />}/>
+                <Route path="/sucesso" element={<Sucesso />}/>
             </Routes>
         </BrowserRouter>
     );
