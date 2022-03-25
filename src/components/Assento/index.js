@@ -4,6 +4,8 @@ import axios from "axios";
 
 import "./style.css";
 
+import Cadeira from "./../Cadeira/";
+
 function Assento() {
     const [assento, setAssento] = useState({});
     const { idSessao } = useParams();
@@ -16,17 +18,6 @@ function Assento() {
     })
     }, []);
 
-    const [selecionado, setSelecionado] = useState({selecionado:false, classe:""});
-    
-    function selecionar() {
-        if(selecionado.selecionado === false){
-            setSelecionado({selecionado: true, classe: "selecionado"});
-        }
-        if(selecionado.selecionado === true){
-            setSelecionado({selecionado:false, classe: ""});
-        }
-    }
-
     const {name, seats, day, movie} = assento;
     return Object.values(assento).length > 0 ?(
         <div className="Assento">
@@ -35,9 +26,9 @@ function Assento() {
                 <div className="cadeiras">
                     {seats.map((assento) => {
                         const {name, isAvailable, id} = assento;
-                        return isAvailable ? (
-                            <p className={selecionado.classe} onClick={() => selecionar()} key={id}>{name}</p>
-                        ): <p className="bloqueado" onClick={() => alert("Esse assento não está disponível")} key={id}>{name}</p>
+                        return (
+                            <Cadeira name={name} isAvailable={isAvailable} id={id}/>
+                        );
                     })}
                 </div>
                 <div className="legenda">
