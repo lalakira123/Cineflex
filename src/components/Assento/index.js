@@ -16,6 +16,17 @@ function Assento() {
     })
     }, []);
 
+    const [selecionado, setSelecionado] = useState({selecionado:false, classe:""});
+    
+    function selecionar() {
+        if(selecionado.selecionado === false){
+            setSelecionado({selecionado: true, classe: "selecionado"});
+        }
+        if(selecionado.selecionado === true){
+            setSelecionado({selecionado:false, classe: ""});
+        }
+    }
+
     const {name, seats, day, movie} = assento;
     return Object.values(assento).length > 0 ?(
         <div className="Assento">
@@ -25,7 +36,7 @@ function Assento() {
                     {seats.map((assento) => {
                         const {name, isAvailable, id} = assento;
                         return isAvailable ? (
-                            <p key={id}>{name}</p>
+                            <p className={selecionado.classe} onClick={() => selecionar()} key={id}>{name}</p>
                         ): <p className="bloqueado" onClick={() => alert("Esse assento não está disponível")} key={id}>{name}</p>
                     })}
                 </div>
