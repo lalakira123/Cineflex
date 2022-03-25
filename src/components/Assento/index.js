@@ -1,8 +1,16 @@
-import { Link } from "react-router-dom"; 
+import { useState, useEffect} from "react";
+import { Link, useParams } from "react-router-dom"; 
+import axios from "axios";
 
 import "./style.css";
 
 function Assento() {
+    const { idSessao } = useParams();
+    const promessa = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${idSessao}/seats`);
+    promessa.then(resposta => {
+        const { data } = resposta;
+        console.log(data);
+    })
     return (
         <div className="Assento">
             <main>

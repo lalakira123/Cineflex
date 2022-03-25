@@ -15,8 +15,8 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<Catalogo />}/>
-                <Route path="/filme" element={<Filme />}/>
-                <Route path="/sessao" element={<Assento />}/>
+                <Route path="/filme/:idFilme" element={<Filme />}/>
+                <Route path="/sessao/:idSessao" element={<Assento />}/>
                 <Route path="/sucesso" element={<Sucesso />}/>
             </Routes>
         </BrowserRouter>
