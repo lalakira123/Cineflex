@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./style.css";
+
 function Cadeira(props) {
     const [selecionado, setSelecionado] = useState({selecionado:false, classe:""});
     
