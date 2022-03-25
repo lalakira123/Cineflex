@@ -5,18 +5,29 @@ import axios from "axios";
 import "./style.css";
 
 function Assento() {
+    const [assento, setAssento] = useState({});
     const { idSessao } = useParams();
-    const promessa = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${idSessao}/seats`);
-    promessa.then(resposta => {
-        const { data } = resposta;
-        console.log(data);
+    useEffect(() => {
+        const promessa = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${idSessao}/seats`);
+        promessa.then(resposta => {
+            const { data } = resposta;
+            console.log(data);
+            setAssento(data);
     })
-    return (
+    }, []);
+
+    const {name, seats, day, movie} = assento;
+    return Object.values(assento).length > 0 ?(
         <div className="Assento">
             <main>
                 <h2>Selecione o(s) assento(s)</h2>
                 <div className="cadeiras">
-                    <p>01</p>
+                    {seats.map((assento) => {
+                        const {name, isAvailable, id} = assento;
+                        return isAvailable ? (
+                            <p key={id}>{name}</p>
+                        ): <p className="bloqueado" onClick={() => alert("Esse assento não está disponível")} key={id}>{name}</p>
+                    })}
                 </div>
                 <div className="legenda">
                     <div>
@@ -49,15 +60,19 @@ function Assento() {
 
             <footer>
                 <div className="filme">
-                    imagem
+                    <img src={movie.posterURL} alt={movie.title}/>
                 </div>
                 <div>
-                    <p>Enola Holmes</p>
-                    <p>Quinta-Feira - 15:00</p>
+                    <p>{movie.title}</p>
+                    <p>{day.weekday} - {name}</p>
                 </div>
             </footer>
         </div>
-    );
+    ): <div className="Assento">
+            <main>
+                <h2>Carregando ...</h2>
+            </main>
+        </div>
 }
 
 export default Assento;
