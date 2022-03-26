@@ -33,7 +33,9 @@ function Filme() {
                                 {showtimes.map((horario) => {
                                     const { name, id } = horario;
                                     return (
-                                        <Link to={`/sessao/${id}`} key={name}><p>{name}</p></Link>
+                                        <p key={name}>
+                                            <Link className="link" to={`/sessao/${id}`}>{name}</Link>
+                                        </p>
                                     );
                                 })}
                             </div>

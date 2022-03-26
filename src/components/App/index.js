@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { useState } from "react";
+
 import "./reset.css";
 import "./style.css";
 
@@ -10,14 +12,15 @@ import Assento from "./../Assento/";
 import Sucesso from "./../Sucesso/";
 
 function App() {
-       return (
+    const [sucesso, setSucesso] = useState({});
+   return (
         <BrowserRouter>
             <Header />
             <Routes>
                 <Route path="/" element={<Catalogo />}/>
                 <Route path="/filme/:idFilme" element={<Filme />}/>
-                <Route path="/sessao/:idSessao" element={<Assento />}/>
-                <Route path="/sucesso" element={<Sucesso />}/>
+                <Route path="/sessao/:idSessao" element={<Assento sucesso={sucesso} setSucesso={setSucesso}/>}/>
+                <Route path="/sucesso" element={<Sucesso sucesso={sucesso}/>}/>
             </Routes>
         </BrowserRouter>
     );
