@@ -13,6 +13,9 @@ function Filme() {
         promessa.then( resposta => {
             const {data} = resposta;
             setSessao(data);
+        });
+        promessa.catch(() => {
+            alert("Não foi possível acessar a API!");
         })
     },[]);
 

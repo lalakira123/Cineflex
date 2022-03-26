@@ -62,7 +62,13 @@
     height: 25px;
 }
 
-.Assento main .info-cliente {
+.Assento main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Assento main form .info-cliente {
     margin-top: 42px;
     font-size: 18px;
     font-weight: 400;
@@ -71,11 +77,11 @@
     width: 327px;
 }
 
-.Assento main .info-cliente div {
+.Assento main form .info-cliente div {
     margin-bottom: 7px;
 }
 
-.Assento main .info-cliente input {
+.Assento main form .info-cliente input {
     font-style: italic;
     font-size: 18px;
     border: 1px solid #D5D5D5;
@@ -84,7 +90,7 @@
     height: 51px;
 }
 
-.Assento main button {
+.Assento main form button {
     color: #FFFFFF;
     width: 225px;
     height: 42px;

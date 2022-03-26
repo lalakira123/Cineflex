@@ -10,6 +10,9 @@ function Catalogo() {
         const promessa = axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies");
         promessa.then((resposta) => {
         setFilmes(resposta.data);
+        });
+        promessa.catch(() => {
+            alert("Não foi possível acessar a API!");
         })
     },[]);
 
