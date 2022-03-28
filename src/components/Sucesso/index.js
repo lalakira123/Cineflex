@@ -16,7 +16,7 @@ function Sucesso(props) {
         promessa.catch(() => {
             alert("Não foi possível acessar a API!");
         })
-    })
+    },[]);
 
     const {name, day, movie} = infoFilme;
     const {sucesso} = props;
